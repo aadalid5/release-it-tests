@@ -31,7 +31,7 @@ pipeline {
                         sh "git push --no-verify && git push --tags --no-verify"
                     }
                 }
-                withEnv(["GITHUB_TOKEN='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'"]) {
+                withEnv(["GITHUB_TOKEN=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"]) {
                     echo env.GITHUB_TOKEN
                         // sh "npx release-it@14.14.3 --no-npm --no-git --no-increment --github.release --ci"
                     }
