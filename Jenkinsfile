@@ -39,7 +39,6 @@ pipeline {
                 }
 
                 sh "npx release-it@14.14.3 --no-npm --no-git --no-increment --github.release --ci"
-
                 //sh "npm run release"
 
                 // withEnv(["GITHUB_TOKEN=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"]){
