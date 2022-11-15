@@ -34,9 +34,9 @@ pipeline {
                         sh "git reset --hard HEAD"
                         newVersion = sh(script: "npm version patch --commit-hooks=false -m 'bump version to %s'", returnStdout: true)
                         sh "git push -f --no-verify && git push --tags --no-verify"
-                        sh "npm run release:notes"
                     }
                 }
+                sh "npm run release:notes"
             }
         }
     }
