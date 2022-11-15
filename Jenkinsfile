@@ -28,7 +28,7 @@ pipeline {
                         sh "git checkout main"
                         sh "git reset --hard HEAD"
                         newVersion = sh(script: "npm version patch --commit-hooks=false -m 'bump version to %s'", returnStdout: true)
-                        sh "git push --no-verify && git push --tags --no-verify"
+                        sh "git push -f --no-verify && git push --tags --no-verify"
                         sh "npx release-it@14.14.3 --no-npm --no-git --no-increment --github.release --ci"
                     }
                 }
