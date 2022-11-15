@@ -29,16 +29,14 @@ pipeline {
                 sshagent(["github-key-a-id"]){
                     script {
                         sh "git fetch"
-                        sh "git checkout main"
+                        sh "git pull origin main"
                         newVersion = sh(script: "npm version patch --commit-hooks=false -m 'bump version to %s'", returnStdout: true)
                         sh "git push --no-verify && git push --tags --no-verify"
                     }
                 }
-                script{
-                    sh "npm -v"
-                    sh "npm run release"
+                withEnv([GITHUB_TOKEN="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"]) {
+                    sh "npx release-it@14.14.3 --no-npm --no-git --no-increment --github.release --ci"
                 }
-            }
         }
     }
 }
