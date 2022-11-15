@@ -32,8 +32,8 @@ pipeline {
                         
                     }
                 }
-            }
             sh "npx release-it@14.14.3 --no-npm --no-git --no-increment --github.release --ci"
+            }
         }
     }
 }
