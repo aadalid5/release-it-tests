@@ -32,12 +32,10 @@ pipeline {
                         
                     }
                 }
-                sshagent(["GITHUB_TOKEN"]){
-                    withEnv(["GITHUB_TOKEN=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"]){
-                        echo env.GITHUB_TOKEN
-                        sh "npx release-it@14.14.3 --no-npm --no-git --no-increment --github.release --ci"
-                    }
-                }
+
+            sh "npx release-it@14.14.3 --no-npm --no-git --no-increment --github.release --ci"
+
+
             }
         }
     }
