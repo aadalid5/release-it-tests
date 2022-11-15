@@ -23,7 +23,7 @@ pipeline {
             steps{
                 sshagent(["github-key-a-id"]){
                     script {
-                        sh "git fetch"
+                        sh "git fetch --all"
                         sh "git checkout main"
                         sh "git reset --hard HEAD"
                         newVersion = sh(script: "npm version patch --commit-hooks=false -m 'bump version to %s'", returnStdout: true)
