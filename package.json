@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "release": "cross-env GITHUB_TOKEN=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 release-it --no-npm --no-git --no-increment --github.release --ci"
+    "release": "cross-env GITHUB_TOKEN=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 release-it --no-npm --no-git --github.update --ci"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "cross-var": "^1.1.0",
-    "release-it": "^14.14.3"
+    "release-it": "^15.5.0"
   }
 }
