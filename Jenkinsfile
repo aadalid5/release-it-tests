@@ -37,7 +37,7 @@ pipeline {
                     }
                 }
                 withCredentials([gitUsernamePassword(credentialsId: 'git-hbrjenkins')]) {                            
-                    sh "npm run release"
+                    sh "npx release-it --no-npm --no-git --github.no-increment --github.release --ci"
                 }
             }
         }
