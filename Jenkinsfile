@@ -32,7 +32,7 @@ pipeline {
                         
                     }
                 }
-                sshagent("GITHUB_TOKEN"]){
+                sshagent(["GITHUB_TOKEN"]){
                     sh "npxrelease-it@14.14.3 --no-npm --no-git --no-increment --github.release --ci"
                 }
             }
