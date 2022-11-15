@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "release": "cross-env GITHUB_TOKEN=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 release-it --no-npm --no-git --github.update --ci"
+    "release": "cross-env GITHUB_TOKEN=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 release-it --no-npm --no-git --github.update --github.release --ci"
   },
   "repository": {
     "type": "git",
