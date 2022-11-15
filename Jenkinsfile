@@ -36,7 +36,10 @@ pipeline {
                         sh "git push -f --no-verify && git push --tags --no-verify"
                     }
                 }
-                sh "npm run release:notes"
+                script{
+                    sh "npm -v"
+                    sh "npm run release"
+                }
             }
         }
     }
