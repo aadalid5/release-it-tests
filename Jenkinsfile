@@ -25,7 +25,7 @@ pipeline {
                     script {
                         sh "git fetch"
                         newVersion = sh(script: "npm version patch --commit-hooks=false -m 'bump version to %s'", returnStdout: true)
-                        sh "git push --no-verify && git push --tags --no-verify"
+                        sh "git push origin main --no-verify && git push --tags --no-verify"
                     }
                 }
                 withEnv([GITHUB_TOKEN="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"]) {
