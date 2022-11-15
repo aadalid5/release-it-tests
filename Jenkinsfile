@@ -28,7 +28,7 @@ pipeline {
             steps{
                 sshagent(["github-key-a-id"]){
                     script {
-                        // sh "git fetch"
+                        sh "git fetch"
                         // sh "git checkout main"
                         // newVersion = sh(script: "npm version patch --commit-hooks=false -m 'bump version to %s'", returnStdout: true)
                         // sh "git push --no-verify && git push --tags --no-verify"
