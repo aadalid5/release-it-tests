@@ -8,6 +8,11 @@ pipeline {
     }
 
     stages {
+        stage("install"){
+            steps{
+                sh "npm i"
+            }
+        }
         stage('git remote'){
             steps {
                 sshagent(["github-key-a-id"]){
